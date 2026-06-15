@@ -335,8 +335,8 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-indigo-100 selection:text-indigo-900 pb-32 md:pb-20">
       
-      {/* Top Brand Banner - Extremely Compact, Non-Sticky */}
-      <header className="bg-white border-b border-slate-100 px-4 py-3 sm:px-6">
+      {/* Top Brand Banner - Extremely Compact, Non-Sticky, Safe Area Aware */}
+      <header className="bg-white border-b border-slate-100 px-4 pt-[calc(env(safe-area-inset-top,0px)+14px)] pb-3.5 sm:py-3 sm:px-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           
           <div className="flex items-center gap-2">
