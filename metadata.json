@@ -1,0 +1,10 @@
+{
+  "name": "Remix: Fitness ve Kalori Takipçisi",
+  "description": "Yemek fotoğraflarından otomatik kalori tespiti, egzersiz set ve tekrar takibi ve yapay zeka destekli detaylı antrenman analiz raporları sunan akıllı fitness asistanı.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

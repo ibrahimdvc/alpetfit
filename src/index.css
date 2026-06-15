@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/* === iOS Compatibility & Platform Optimizations === */
+
+/* Prevent browser keyboard layout zooming on focused textboxes/selects in iOS Safari */
+input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+  font-size: 16px !important; /* Override layout styles on mobile viewports to prevent iOS text-zoom-in */
+}
+
+/* Gracefully restore optimal desktop font scales for inputs */
+@media (min-width: 640px) {
+  input, select, textarea {
+    font-size: 0.875rem !important; /* Re-scale to 14px on wider monitors */
+  }
+}
+
+/* Eliminate dark-grey transparent box-shadow flashes when clicking buttons on iOS Apple devices */
+button, a, [role="button"], svg, rect, select, input[type="submit"] {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+/* Enable hardware-accelerated momentum friction-scrolling on scroll rails for iOS */
+.overflow-x-auto, .overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
+}

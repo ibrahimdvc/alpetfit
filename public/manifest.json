@@ -1,0 +1,17 @@
+{
+  "short_name": "FitTrack AI",
+  "name": "FitTrack AI - Akıllı Fitness & Kalori Takipçisi",
+  "description": "Yemek fotoğraflarından otomatik kalori tespiti, egzersiz set ve tekrar takibi ve yapay zeka destekli detaylı antrenman analiz raporları sunan akıllı fitness asistanı.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "/fittrack_app_logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512"
+    }
+  ]
+}
