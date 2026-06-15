@@ -24,11 +24,11 @@ service cloud.firestore {
     match /users/{userId}/goals/current {
       allow read: if isOwner(userId);
       allow create, update: if isOwner(userId)
-        && request.resource.data.calories is int
-        && request.resource.data.protein is int
-        && request.resource.data.carbs is int
-        && request.resource.data.fat is int
-        && request.resource.data.water is int;
+        && request.resource.data.calories is number
+        && request.resource.data.protein is number
+        && request.resource.data.carbs is number
+        && request.resource.data.fat is number
+        && request.resource.data.water is number;
     }
 
     // Meals collection access rules
@@ -40,10 +40,10 @@ service cloud.firestore {
           request.resource.data.id is string
           && request.resource.data.name is string
           && request.resource.data.name.size() <= 500
-          && request.resource.data.calories is int
-          && request.resource.data.protein is int
-          && request.resource.data.carbs is int
-          && request.resource.data.fat is int
+          && request.resource.data.calories is number
+          && request.resource.data.protein is number
+          && request.resource.data.carbs is number
+          && request.resource.data.fat is number
         ));
     }
 
@@ -54,7 +54,7 @@ service cloud.firestore {
         && isValidId(waterLogId)
         && (request.resource == null || (
           request.resource.data.id is string
-          && request.resource.data.amountMl is int
+          && request.resource.data.amountMl is number
         ));
     }
 
