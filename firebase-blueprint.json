@@ -1,0 +1,77 @@
+{
+  "entities": {
+    "Meal": {
+      "title": "Meal",
+      "description": "Logged meal details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "calories": { "type": "integer" },
+        "protein": { "type": "integer" },
+        "carbs": { "type": "integer" },
+        "fat": { "type": "integer" },
+        "timestamp": { "type": "string" },
+        "image": { "type": "string" },
+        "confidence": { "type": "string" },
+        "description": { "type": "string" },
+        "healthTips": { "type": "string" }
+      },
+      "required": ["id", "name", "calories", "protein", "carbs", "fat", "timestamp"]
+    },
+    "WaterLog": {
+      "title": "WaterLog",
+      "description": "Logged water drink progress",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "amountMl": { "type": "integer" }
+      },
+      "required": ["id", "timestamp", "amountMl"]
+    },
+    "WorkoutSession": {
+      "title": "WorkoutSession",
+      "description": "Logged workout session history",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "exercises": { "type": "array" },
+        "report": { "type": "object" }
+      },
+      "required": ["id", "date", "exercises"]
+    },
+    "DailyGoals": {
+      "title": "DailyGoals",
+      "description": "Target daily macronutrients and water goal",
+      "type": "object",
+      "properties": {
+        "calories": { "type": "integer" },
+        "protein": { "type": "integer" },
+        "carbs": { "type": "integer" },
+        "fat": { "type": "integer" },
+        "water": { "type": "integer" }
+      },
+      "required": ["calories", "protein", "carbs", "fat", "water"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/goals/current": {
+      "schema": "DailyGoals",
+      "description": "Target goals for calories, water, etc"
+    },
+    "/users/{userId}/meals/{mealId}": {
+      "schema": "Meal",
+      "description": "Eaten meals logged by user"
+    },
+    "/users/{userId}/waterLogs/{waterLogId}": {
+      "schema": "WaterLog",
+      "description": "Water logged by user"
+    },
+    "/users/{userId}/workouts/{workoutId}": {
+      "schema": "WorkoutSession",
+      "description": "Fitness workout sessions recorded by user"
+    }
+  }
+}
